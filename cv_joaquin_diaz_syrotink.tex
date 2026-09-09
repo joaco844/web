@@ -1,0 +1,227 @@
+%-------------------------
+% Resume in Latex
+% Author : Joaquin Diaz Syrotink
+% Based off of: Jake Gutierrez / sb2nov
+% Optimized for ATS (Applicant Tracking Systems)
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins for clean presentation and ATS parsing
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+% Ensure that generated PDF is machine readable / ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, labelsep=5pt, itemsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Joaquin Diaz Syrotink} \\ \vspace{2pt}
+    \textbf{\large Full Stack Developer $\cdot$ Python $\cdot$ Django $\cdot$ FastAPI $\cdot$ AI-Powered Systems} \\ \vspace{4pt}
+    \small
+    \href{mailto:joaquindiazsyrotink@gmail.com}{\raisebox{-0.1\height}\faEnvelope\ \underline{joaquindiazsyrotink@gmail.com}} ~ $|$ ~
+    \href{https://linkedin.com/in/joaquin-diaz-syrotink}{\raisebox{-0.1\height}\faLinkedin\ \underline{linkedin.com/in/joaquin-diaz-syrotink}} ~ $|$ ~
+    \href{https://gitlab.com/joaco_diaz}{\raisebox{-0.1\height}\faGitlab\ \underline{gitlab.com/joaco\_diaz}} ~ $|$ ~
+    \raisebox{-0.1\height}\faMapMarker*\ Buenos Aires, Argentina
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\begin{itemize}[leftmargin=0.0in, label={}]
+    \item\small{
+    Full Stack Developer specialized in Python, Django, and FastAPI, with experience building and troubleshooting production-grade systems for multiple concurrent clients in Legal Tech. Proven track record diagnosing performance issues end-to-end --- from query-level fixes to platform-wide audits spanning ORM usage, background jobs, and external service integrations --- translating findings into prioritized, shippable improvements. Comfortable working independently under pressure, communicating across technical and non-technical stakeholders, and collaborating in fast-paced, team-oriented environments. \\ \vspace{2pt}
+    \textbf{Current stack:} Python $\cdot$ Django $\cdot$ FastAPI $\cdot$ SQL $\cdot$ MariaDB $\cdot$ JavaScript $\cdot$ Linux
+    }
+\end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Full Stack Developer}{July 2024 -- Present}
+      {MyBiG}{Buenos Aires, Argentina}
+      \resumeItemListStart
+        \resumeItem{Gathered and translated requirements from three concurrent client law firms into a shared Legal Tech platform, balancing client-specific workflows against a common architecture and codebase.}
+        \resumeItem{Diagnosed and resolved N+1 query patterns and redundant configuration lookups in core Django views, cutting response times by \textbf{40\%} and easing load on high-traffic endpoints across the platform.}
+        \resumeItem{Authored a platform-wide Django performance audit spanning views, ORM usage, background jobs, and observability --- identifying root causes and delivering a prioritized, impact-ranked remediation plan.}
+        \resumeItem{Collaborated with the team and clients on the functional design and implementation of ``Procuraduría Digital,'' a new document-submission module --- defining business rules, UI flows, and validation pop-ups together, then translating requirements into shippable features.}
+        \resumeItem{Designed a usage-metrics data model and service layer, giving the team visibility into platform consumption by category to support billing and capacity decisions.}
+        \resumeItem{Designed and implemented a task management system synchronized across internal modules, ensuring lawyers always see accurate, up-to-date task status regardless of which part of the platform they work from.}
+        \resumeItem{Diagnosed worker-blocking incidents in a Gunicorn/Django production environment, tracing timeout cascades caused by external API calls without retry or timeout handling, and proposing fixes to prevent server-level failures.}
+        \resumeItem{\textbf{Stack:} Python, Django, MariaDB, SQL, JavaScript, jQuery, Bootstrap, Linux.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {IT Support Intern}{August 2023 -- November 2023}
+      {UNSAM}{Buenos Aires, Argentina}
+      \resumeItemListStart
+        \resumeItem{Configuration and repair of workstations for academic staff.}
+        \resumeItem{Direct user consultations for hardware and software troubleshooting.}
+        \resumeItem{Organization and maintenance of technical inventory.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {B.Sc. in Information Technology Management}{2025 -- Present}
+      {UADE}{Buenos Aires, Argentina}
+    \resumeSubheading
+      {Computer Technician}{2018 -- 2023}
+      {Instituto Polit\'ecnico Modelo}{Buenos Aires, Argentina}
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Space Dashboard --- NASA Open APIs Explorer} $|$ \emph{Personal Project}}{May 2026 -- Present}
+          \resumeItemListStart
+            \resumeItem{Full-stack web application aggregating NASA's open data into 6 interactive sections: daily astronomy picture, near-Earth asteroid tracker, Mars Rover gallery, Earth climate visualization ($\text{CO}_2$ + satellite maps), Space Gallery with favorites and playlists, and an ISS live tracker with pass predictions.}
+            \resumeItem{Built a 3D Solar System simulation with real Keplerian orbits and live JPL comet data.}
+            \resumeItem{Deployed on Render: \href{https://space-dashboard-yore.onrender.com}{\underline{space-dashboard-yore.onrender.com}}}
+            \resumeItem{\textbf{Stack:} Python, Django, JavaScript, Three.js, REST APIs, Leaflet.js, Chart.js, HTML/CSS, Render.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{GitLab Release Summary --- Automated AI Release Notes} $|$ \emph{Personal Project}}{Mar 2026 -- Present}
+          \resumeItemListStart
+            \resumeItem{Tool that connects to any GitLab repository and automatically generates structured release notes from commit history using an LLM.}
+            \resumeItem{One-click GitLab issue creation with the generated summary, streamlining release documentation workflows.}
+            \resumeItem{\textbf{Stack:} FastAPI, python-gitlab, Python, LLMs.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Testing Lifecycle Automation} $|$ \emph{UADE}}{Sep 2025 -- Nov 2025}
+          \resumeItemListStart
+            \resumeItem{Developed automated scripts with Selenium to optimize regression testing, increasing team velocity.}
+            \resumeItem{Designed and managed test cases and runs, ensuring full requirements coverage and system stability.}
+            \resumeItem{Documented defects with detailed evidence to accelerate the bug-fixing process.}
+            \resumeItem{\textbf{Stack:} Python, Selenium.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------HACKATHONS & VOLUNTEER WORK-----------
+\section{Hackathons \& Volunteer Work}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Code for Good 2026 (JPMorgan Chase) --- Donation Platform for Patronato de la Infancia}}{Aug 2026}
+          \resumeItemListStart
+            \resumeItem{\emph{NGO supporting 1,100+ at-risk children}}
+            \resumeItem{Built a full-stack web platform end-to-end (solo full stack ownership) combining a public institutional site with a secure authenticated donor area, enabling online donations to real fundraising projects.}
+            \resumeItem{Designed the data model (Usuario, Proyecto, Categoria, Donacion, Frecuencia) and implemented a personal donor dashboard with Chart.js visualizations of donation history and totals.}
+            \resumeItem{Implemented a donation flow with card-number validation (Luhn algorithm), ensuring sensitive payment data was never persisted.}
+            \resumeItem{Cataloged 10 real fundraising initiatives across 6 categories (Nutrition, Education, Technology, Art, Health, Environment) for donor discoverability.}
+            \resumeItem{\textbf{Stack:} Python, Django, SQLite, JavaScript, Chart.js, HTML/CSS.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Backend:}{ Python, Django, FastAPI} \\
+     \textbf{Databases:}{ MariaDB, MySQL, SQL optimization, indexing strategy} \\
+     \textbf{Debugging \& Performance:}{ Production profiling (pyinstrument, django-debug-toolbar), platform-wide performance audits (ORM, memory, background jobs), root-cause analysis, query optimization} \\
+     \textbf{Tools:}{ Git, GitLab, Postman, Linux, Docker, Generative AI tools (Claude Code, ChatGPT)} \\
+     \textbf{Testing:}{ Selenium, functional testing} \\
+     \textbf{Frontend:}{ JavaScript, jQuery, HTML/CSS, Bootstrap}
+    }}
+ \end{itemize}
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+  \begin{itemize}[leftmargin=0.15in, labelsep=5pt, itemsep=2pt]
+    \resumeItem{\textbf{EF SET English Certificate --- C1 Advanced} --- EF Education First (2026) $\cdot$ Score: 63/100 (Reading: C1, Listening: C2) $\cdot$ \href{https://cert.efset.org/3GPEHs}{\underline{cert.efset.org/3GPEHs}}}
+    \resumeItem{\textbf{SQL (Intermediate)} --- HackerRank (2026) $\cdot$ SQL, MySQL}
+    \resumeItem{\textbf{Rest API (Intermediate)} --- HackerRank (2026) $\cdot$ Python, API Management}
+    \resumeItem{\textbf{Software Engineer Intern} --- HackerRank (2026) $\cdot$ SQL, Python, Problem Solving}
+    \resumeItem{\textbf{Essential Scrum} --- Scrum Alliance / Certiprof (2026) $\cdot$ Agile methodologies, Project management}
+    \resumeItem{\textbf{Enterprise Design Thinking Practitioner} --- IBM (2026) $\cdot$ User-centered design, Problem-solving, Team alignment}
+    \resumeItem{\textbf{Cybersecurity Fundamentals} --- IBM (2026) $\cdot$ Cyber risk management, Threat analysis, Vulnerability management}
+  \end{itemize}
+
+%-----------LANGUAGES---------------
+\section{Languages}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Spanish:}{ Native} \hspace{25pt}
+      \textbf{English:}{ C1 Advanced (EF SET Certificate $\cdot$ Score: 63/100)}
+    }}
+  \end{itemize}
+
+\end{document}
