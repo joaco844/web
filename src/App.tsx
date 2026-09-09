@@ -63,6 +63,30 @@ export function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Dynamic SEO metadata synchronization on language switch
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    if (lang === 'en') {
+      document.title = 'Joaquin Diaz Syrotink | Full Stack Software Developer · Python, Django, FastAPI';
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute(
+          'content',
+          'Portfolio & CV of Joaquin Diaz Syrotink — Full Stack Software Developer specialized in Python, Django, FastAPI, database performance optimization, and scalable backend architecture in Buenos Aires, Argentina.'
+        );
+      }
+    } else {
+      document.title = 'Joaquin Diaz Syrotink | Desarrollador de Software Full Stack · Python, Django, FastAPI';
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute(
+          'content',
+          'Portafolio y CV de Joaquín Díaz Syrotink — Desarrollador de Software Full Stack especializado en Python, Django, FastAPI, optimización de bases de datos y arquitectura backend en Buenos Aires, Argentina.'
+        );
+      }
+    }
+  }, [lang]);
+
   return (
     <div className="min-h-screen bg-canvas text-ink flex flex-col font-sans">
       {/* Web Presentation Chrome (hidden during printing) */}

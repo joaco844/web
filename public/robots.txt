@@ -1,0 +1,5 @@
+# robots.txt for Joaquin Diaz Syrotink Portfolio
+User-agent: *
+Allow: /
+
+Sitemap: https://joaco844.github.io/sitemap.xml
