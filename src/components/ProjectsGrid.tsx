@@ -15,10 +15,9 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ lang, searchQuery = 
 
   const filterCategories = [
     { label: ui.projects.allFilter, value: 'ALL' },
-    { label: 'FULL STACK & 3D', value: 'FULL STACK & 3D SIMULATION' },
-    { label: 'AI & FASTAPI', value: 'AI-POWERED SYSTEMS & FASTAPI' },
     { label: 'JPMORGAN HACKATHON', value: 'HACKATHON / JPMORGAN CHASE' },
-    { label: 'TESTING & QA', value: 'QA & TEST AUTOMATION' },
+    { label: 'NASA & THREE.JS', value: 'FULL STACK & 3D SIMULATION' },
+    { label: 'AI & FASTAPI', value: 'AI & MICROSERVICES' },
   ];
 
   // Swatch color palette matching tech themes

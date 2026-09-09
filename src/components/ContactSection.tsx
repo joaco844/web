@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { cvDataMap, Language } from '../data/cvData';
 import { Mail, Send, CheckCircle2 } from 'lucide-react';
-import { LinkedinIcon, GithubIcon } from './Icons';
+import { LinkedinIcon, GithubIcon, GitlabIcon } from './Icons';
 
 interface ContactSectionProps {
   lang: Language;
@@ -111,6 +111,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
                 <p className="text-body-strong text-ink">github.com/joaco844</p>
               </div>
             </a>
+
+            {personalInfo.gitlab && (
+              <a
+                href={personalInfo.gitlab}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 p-3 bg-canvas border border-hairline hover:border-ink transition-colors group"
+              >
+                <div className="btn-icon-circular w-10 h-10 group-hover:bg-ink group-hover:text-canvas transition-colors">
+                  <GitlabIcon className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-utility-xs text-mute uppercase tracking-wider">{ui.contact.gitlabLabel}</p>
+                  <p className="text-body-strong text-ink">gitlab.com/joaco_diaz</p>
+                </div>
+              </a>
+            )}
           </div>
 
           <div className="pt-4 border-t border-hairline text-utility-xs text-mute uppercase tracking-widest">

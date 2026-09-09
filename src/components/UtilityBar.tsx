@@ -87,6 +87,21 @@ export const UtilityBar: React.FC<UtilityBarProps> = ({
           <span>GITHUB</span>
           <ExternalLink className="w-3 h-3" />
         </a>
+
+        {personalInfo.gitlab && (
+          <>
+            <span className="text-hairline hidden lg:inline">|</span>
+            <a
+              href={personalInfo.gitlab}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex items-center space-x-1 hover:text-charcoal transition-colors uppercase tracking-tight"
+            >
+              <span>GITLAB</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </>
+        )}
       </div>
     </div>
   );

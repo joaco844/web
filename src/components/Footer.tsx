@@ -92,6 +92,18 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate, onPrintCV }) =
                   {ui.footer.githubRepos}
                 </a>
               </li>
+              {personalInfo.gitlab && (
+                <li>
+                  <a
+                    href={personalInfo.gitlab}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-ink transition-colors uppercase block"
+                  >
+                    {ui.footer.gitlabRepos}
+                  </a>
+                </li>
+              )}
               <li>
                 <button
                   onClick={() => onNavigate('proyectos')}
@@ -129,6 +141,18 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate, onPrintCV }) =
                   GitHub
                 </a>
               </li>
+              {personalInfo.gitlab && (
+                <li>
+                  <a
+                    href={personalInfo.gitlab}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-ink transition-colors uppercase block"
+                  >
+                    GitLab
+                  </a>
+                </li>
+              )}
               <li>
                 <a
                   href={`mailto:${personalInfo.email}`}

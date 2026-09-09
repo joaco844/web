@@ -62,6 +62,7 @@ export interface CVData {
     email: string;
     linkedin: string;
     github: string;
+    gitlab: string;
     currentStack: string[];
     about: string[];
   };
@@ -152,6 +153,7 @@ export interface CVData {
       emailLabel: string;
       linkedinLabel: string;
       githubLabel: string;
+      gitlabLabel: string;
       timezone: string;
       nameLabel: string;
       namePlaceholder: string;
@@ -173,6 +175,7 @@ export interface CVData {
       manifestoDesc: string;
       downloadPdf: string;
       githubRepos: string;
+      gitlabRepos: string;
       projectMetrics: string;
       backToTop: string;
       rights: string;
@@ -189,75 +192,86 @@ export const cvDataMap: Record<Language, CVData> = {
     personalInfo: {
       fullName: "JOAQUIN DIAZ SYROTINK",
       monogram: "JDS",
-      headline: "FULL STACK DEVELOPER · PYTHON · DJANGO · FASTAPI · AI-POWERED SYSTEMS",
+      headline: "SOFTWARE DEVELOPER · PYTHON · DJANGO · FASTAPI · BACKEND & PERFORMANCE",
       campaignStatement: [
         "HIGH PERFORMANCE IN PRODUCTION.",
-        "SYSTEM ARCHITECTURE",
-        "& END-TO-END AUDITING."
+        "BACKEND ARCHITECTURE",
+        "& SYSTEM OPTIMIZATION."
       ],
       location: "Buenos Aires, Argentina",
-      availability: "AVAILABLE FOR NEW PROFESSIONAL OPPORTUNITIES",
+      availability: "AVAILABLE FOR ROLES & HIGH-IMPACT PROJECTS",
       email: "joaquindiazsyrotink@gmail.com",
       linkedin: "https://linkedin.com/in/joaquin-diaz-syrotink",
       github: "https://github.com/joaco844",
-      currentStack: ["Python", "Django", "FastAPI", "SQL", "MariaDB", "JavaScript", "Linux"],
+      gitlab: "https://gitlab.com/joaco_diaz",
+      currentStack: ["Python", "Django", "FastAPI", "SQL", "Gunicorn", "Celery", "PostgreSQL", "Docker", "Linux"],
       about: [
-        "Full Stack Developer specialized in Python, Django, and FastAPI, with experience building and troubleshooting production-grade systems for multiple concurrent clients in Legal Tech.",
-        "Proven track record diagnosing performance issues end-to-end — from query-level fixes and N+1 resolution to platform-wide audits spanning ORM usage, background jobs, Gunicorn concurrency, and external service integrations — translating findings into prioritized, shippable improvements.",
-        "Comfortable working independently under pressure, communicating across technical and non-technical stakeholders, and collaborating in fast-paced, team-oriented environments."
+        "Software Developer specialized in Python, Django, FastAPI, and high-performance backend architectures. Hands-on experience diagnosing and resolving production bottlenecks in multi-tenant SaaS platforms (ORM optimization, N+1 query elimination, redundant lookups, and Gunicorn worker lockup mitigation).",
+        "Proven track record designing scalable relational schemas, transactional service layers, and asynchronous task workflows with Celery, bridging engineering rigor with strategic business deliverables.",
+        "Comfortable working with technical leadership and cross-functional teams, handling mission-critical production incidents under pressure, and delivering clean, well-tested solutions."
       ]
     },
     metrics: [
       { value: "-40%", label: "DJANGO RESPONSE TIMES (N+1 QUERY OPTIMIZATION)" },
-      { value: "3 FIRMS", label: "CONCURRENT CLIENT LAW FIRMS ON LEGAL TECH PLATFORM" },
-      { value: "+1,100", label: "AT-RISK CHILDREN IMPACTED (JPMORGAN CODE FOR GOOD)" },
-      { value: "C1 ADV.", label: "CERTIFIED ENGLISH PROFICIENCY (EF SET · C2 LISTENING)" },
+      { value: "+1,100", label: "AT-RISK CHILDREN IMPACTED (JPMORGAN CHASE)" },
+      { value: "6 APIS", label: "NASA OPEN APIS & THREE.JS 3D SIMULATION" },
+      { value: "C1 ADV.", label: "CERTIFIED ENGLISH PROFICIENCY (EF SET 63/100)" },
     ],
     experiences: [
       {
         id: "exp-mybig",
-        role: "Full Stack Developer",
+        role: "Full Stack Software Developer",
         company: "MyBiG",
         period: "JULY 2024 — PRESENT",
         location: "Buenos Aires, Argentina",
-        summary: "Engineering and scalability of a shared SaaS Legal Tech platform for three concurrent client law firms.",
+        summary: "Backend architecture engineering, ORM optimization, and core service layers for a multi-firm Legal Tech platform.",
         achievements: [
-          "Gathered and translated requirements from three concurrent client law firms into a shared Legal Tech platform, balancing client-specific workflows against a common architecture and codebase.",
-          "Diagnosed and resolved N+1 query patterns and redundant configuration lookups in core Django views, cutting response times by 40% and easing load on high-traffic endpoints across the platform.",
-          "Authored a platform-wide Django performance audit spanning views, ORM usage, background jobs, and observability — identifying root causes and delivering a prioritized, impact-ranked remediation plan.",
-          "Collaborated with the team and clients on the functional design and implementation of 'Procuraduría Digital,' a new document-submission module — defining business rules, UI flows, and validation pop-ups together, then translating requirements into shippable features.",
-          "Designed a usage-metrics data model and service layer, giving the team visibility into platform consumption by category to support billing and capacity decisions.",
-          "Designed and implemented a task management system synchronized across internal modules, ensuring lawyers always see accurate, up-to-date task status regardless of which part of the platform they work from.",
-          "Diagnosed worker-blocking incidents in a Gunicorn/Django production environment, tracing timeout cascades caused by external API calls without retry or timeout handling, and proposing fixes to prevent server-level failures."
+          "Diagnosed and resolved N+1 query patterns, redundant lookups, and unindexed queries in core Django/ORM views, reducing response times by 40% and easing database load during traffic spikes.",
+          "Investigated and resolved critical worker-blocking incidents in Gunicorn/Django production environments caused by timeout cascades from external APIs; designed retry logic, strict timeouts, and asynchronous tasks.",
+          "Led the technical development of 'Procuraduría Digital' (automated document submission module), applying OOP design patterns to ensure strict validation and transactional consistency across client law firms.",
+          "Designed scalable relational schemas and service layers for platform usage metrics and cross-module task synchronization, providing consumption visibility for billing and infrastructure decisions.",
+          "Authored a comprehensive Django platform performance audit (ORM, observability, and background jobs), delivering a prioritized technical debt remediation plan to technical leadership."
         ],
-        technologies: ["Python", "Django", "MariaDB", "SQL", "JavaScript", "jQuery", "Bootstrap", "Linux", "Gunicorn"]
+        technologies: ["Python", "Django", "Gunicorn", "Celery", "MariaDB", "SQL", "RESTful APIs", "Async Processing"]
       },
       {
         id: "exp-unsam",
         role: "IT Support Intern",
-        company: "UNSAM (Universidad Nacional de San Martín)",
+        company: "Universidad Nacional de San Martín (UNSAM)",
         period: "AUGUST 2023 — NOVEMBER 2023",
         location: "Buenos Aires, Argentina",
-        summary: "Comprehensive technical support, computer infrastructure maintenance, and direct assistance to academic staff.",
+        summary: "Preventive maintenance, user troubleshooting, and infrastructure support for academic staff.",
         achievements: [
-          "Configuration and repair of workstations and peripherals for academic staff.",
-          "Direct user consultations for hardware, software, and networking troubleshooting.",
-          "Organization and maintenance of technical inventory and hardware assets."
+          "Preventive maintenance, diagnosis, and incident resolution across hardware, software, and network connectivity for over 100 academic staff users, optimizing technical inventory management."
         ],
-        technologies: ["Hardware", "Operating Systems", "Networking", "Troubleshooting", "Inventory"]
+        technologies: ["Hardware", "Software", "Networking", "Troubleshooting", "Technical Inventory"]
       }
     ],
     projects: [
       {
+        id: "proj-jpmorgan-codeforgood",
+        title: "CODE FOR GOOD 2026 (JPMORGAN CHASE) — DONATION PLATFORM",
+        category: "HACKATHON / JPMORGAN CHASE",
+        subtitle: "Django, Chart.js, SQLite · Aug 2026",
+        image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb7?auto=format&fit=crop&w=900&q=80",
+        promoBadge: "CODE FOR GOOD 2026",
+        description: "Designed and implemented an end-to-end platform for Patronato de la Infancia (an NGO assisting 1,100+ vulnerable children), featuring donor authentication, a real-time analytics dashboard with Chart.js, and a catalog of 10 social initiatives. Implemented a secure donation flow with client-side card validation using the Luhn algorithm, ensuring zero persistence of sensitive financial credentials.",
+        metrics: "+1,100 Children Impacted · Luhn Card Validation",
+        technologies: ["Django", "Python", "Chart.js", "SQLite", "Luhn Algorithm", "HTML5/CSS3"],
+        demoUrl: "https://github.com/joaco844",
+        repoUrl: "https://github.com/joaco844",
+        featured: true
+      },
+      {
         id: "proj-space-dashboard",
-        title: "SPACE DASHBOARD — NASA OPEN APIS",
+        title: "SPACE DASHBOARD — NASA OPEN APIS EXPLORER",
         category: "FULL STACK & 3D SIMULATION",
-        subtitle: "Interactive space exploration platform powered by NASA open data",
+        subtitle: "space-dashboard-yore.onrender.com · May 2026 – Present",
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80",
-        promoBadge: "IN PRODUCTION",
-        description: "Full-stack web application aggregating NASA's open data into 6 interactive sections: daily astronomy picture, near-Earth asteroid tracker, Mars Rover gallery, Earth climate visualization (CO₂ + satellite maps), Space Gallery with favorites and playlists, and an ISS live tracker with pass predictions. Built a 3D Solar System simulation with real Keplerian orbits and live JPL comet data.",
-        metrics: "6 Interactive Modules · Three.js 3D Simulation · Live",
-        technologies: ["Python", "Django", "JavaScript", "Three.js", "REST APIs", "Leaflet.js", "Chart.js", "Render"],
+        promoBadge: "LIVE IN PRODUCTION",
+        description: "Full-stack web application consuming 6 open NASA APIs (APOD, near-Earth asteroids, Mars rover, weather, and ISS tracker), integrating an interactive 3D Solar System simulation with Keplerian orbits powered by Three.js.",
+        metrics: "6 Open NASA APIs · Three.js 3D Simulation · Docker",
+        technologies: ["Python", "Django", "JavaScript", "Three.js", "REST APIs", "Leaflet.js", "Chart.js", "Docker", "Render"],
         demoUrl: "https://space-dashboard-yore.onrender.com",
         repoUrl: "https://github.com/joaco844",
         featured: true
@@ -265,86 +279,59 @@ export const cvDataMap: Record<Language, CVData> = {
       {
         id: "proj-gitlab-ai",
         title: "GITLAB RELEASE SUMMARY — AI AUTOMATION",
-        category: "AI-POWERED SYSTEMS & FASTAPI",
-        subtitle: "Automated release notes generator powered by LLMs and GitLab API",
+        category: "AI & MICROSERVICES",
+        subtitle: "FastAPI, python-gitlab, LLMs · Mar 2026 – Present",
         image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=900&q=80",
-        promoBadge: "AI POWERED",
-        description: "Tool that connects to any GitLab repository and automatically generates structured release notes from commit history using an LLM. Features one-click GitLab issue creation with the generated summary, streamlining release documentation workflows.",
-        metrics: "1-Click GitLab Issue · Native LLM Integration",
-        technologies: ["FastAPI", "Python", "python-gitlab", "LLMs", "GitLab API"],
+        promoBadge: "AI INTEGRATION",
+        description: "Microservice connecting via API to GitLab repositories, analyzing commit histories and automatically generating structured release notes using LLMs, streamlining release documentation with 1-click issue creation.",
+        metrics: "FastAPI Microservice · LLM Summaries · 1-Click Issues",
+        technologies: ["FastAPI", "Python", "python-gitlab", "LLMs", "GitLab API", "RESTful APIs"],
         demoUrl: "https://github.com/joaco844",
         repoUrl: "https://github.com/joaco844",
         featured: true
-      },
-      {
-        id: "proj-jpmorgan-codeforgood",
-        title: "DONATION PLATFORM — PATRONATO DE LA INFANCIA",
-        category: "HACKATHON / JPMORGAN CHASE",
-        subtitle: "Fundraising platform for an NGO supporting 1,100+ vulnerable children",
-        image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb7?auto=format&fit=crop&w=900&q=80",
-        promoBadge: "CODE FOR GOOD 2026",
-        description: "Built a full-stack web platform end-to-end (solo full stack ownership) combining a public institutional site with a secure authenticated donor area. Designed relational data models (User, Project, Category, Donation, Frequency), donor dashboard with Chart.js, and donation flow with card-number validation (Luhn algorithm) ensuring sensitive payment data was never persisted.",
-        metrics: "+1,100 Children Impacted · Luhn Algorithm",
-        technologies: ["Python", "Django", "SQLite", "JavaScript", "Chart.js", "HTML/CSS"],
-        demoUrl: "https://github.com/joaco844",
-        repoUrl: "https://github.com/joaco844",
-        featured: true
-      },
-      {
-        id: "proj-testing-automation",
-        title: "TESTING LIFECYCLE AUTOMATION",
-        category: "QA & TEST AUTOMATION",
-        subtitle: "Regression testing automation framework built at UADE",
-        image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=900&q=80",
-        promoBadge: "QA AUTOMATION",
-        description: "Automated test scripts with Selenium to optimize regression testing, increasing iteration velocity and ensuring full requirements coverage with structured defect documentation to accelerate remediation cycles.",
-        metrics: "Accelerated Regression Runs · Full Coverage",
-        technologies: ["Python", "Selenium", "Regression Testing", "Defect Tracking"],
-        demoUrl: "https://github.com/joaco844",
-        repoUrl: "https://github.com/joaco844"
       }
     ],
     skillCategories: [
       {
-        title: "BACKEND & FRAMEWORKS",
-        skills: ["Python", "Django", "FastAPI", "Gunicorn", "REST APIs", "Service Architecture"]
+        title: "PROGRAMMING LANGUAGES",
+        skills: ["Python (Advanced)", "SQL (Intermediate)", "Java (OOP Fundamentals)", "JavaScript (ES6+)", "HTML5/CSS3"]
       },
       {
-        title: "DATABASES & PERFORMANCE",
-        skills: ["MariaDB", "MySQL", "SQL Optimization", "Indexing Strategy", "N+1 Query Resolution", "Production Profiling (pyinstrument)", "Django Debug Toolbar"]
+        title: "BACKEND & ARCHITECTURE",
+        skills: ["Django", "FastAPI", "RESTful APIs", "Gunicorn", "Celery", "ORM Optimization (N+1)", "Asynchronous Processing"]
       },
       {
-        title: "FRONTEND & VISUALIZATION",
-        skills: ["JavaScript", "jQuery", "HTML5 / CSS3", "Bootstrap", "Three.js", "Chart.js", "Leaflet.js"]
+        title: "DATABASES & DEVOPS",
+        skills: ["MariaDB", "MySQL", "PostgreSQL", "Docker", "Git", "GitLab CI/CD", "Linux (Ubuntu/Debian)", "Postman"]
       },
       {
-        title: "TOOLS, CLOUD & QA",
-        skills: ["Git", "GitHub", "Linux", "Docker", "Selenium", "Postman", "Render", "Generative AI Tools (Claude Code, ChatGPT)"]
+        title: "PERFORMANCE & DIAGNOSTICS",
+        skills: ["N+1 Query Resolution", "Worker Lockup Mitigation", "Production Profiling (pyinstrument)", "Strict Timeout Policies", "Transactional OOP Consistency"]
       }
     ],
     education: [
       {
         id: "edu-uade",
-        degree: "B.Sc. in Information Technology Management",
-        institution: "UADE — Universidad Argentina de la Empresa (Buenos Aires)",
+        degree: "B.Sc. in Information Technology Management (Licenciatura en Gestión de TI)",
+        institution: "UADE — Universidad Argentina de la Empresa (Buenos Aires, Argentina)",
         period: "2025 — PRESENT",
-        description: "Undergraduate degree focusing on IT strategic management, enterprise software architecture, data modeling, and engineering leadership."
+        description: "Undergraduate degree focusing on IT strategic management, enterprise software architecture, data modeling, and technology leadership."
       },
       {
         id: "edu-politecnico",
         degree: "Computer Technician (Técnico en Computación)",
-        institution: "Instituto Politécnico Modelo (Buenos Aires)",
+        institution: "Instituto Politécnico Modelo (Buenos Aires, Argentina)",
         period: "2018 — 2023",
-        description: "Comprehensive 6-year technical degree in computer architecture, networking, algorithm fundamentals, and software development."
+        description: "6-year comprehensive technical degree covering programming logic, relational databases, networking, hardware architecture, and systems."
       }
     ],
     certifications: [
       {
         id: "cert-efset",
         title: "EF SET English Certificate — C1 Advanced",
-        issuer: "EF Education First",
+        issuer: "EF Standard English Test",
         year: "2026",
-        details: "Score: 63/100 (Reading: C1 · Listening: C2)",
+        details: "Score: 63/100 · Full Professional Proficiency (cert.efset.org/3GPEHs)",
         link: "https://cert.efset.org/3GPEHs"
       },
       {
@@ -352,42 +339,16 @@ export const cvDataMap: Record<Language, CVData> = {
         title: "SQL (Intermediate)",
         issuer: "HackerRank",
         year: "2026",
-        details: "Complex relational queries, indexing, and MySQL performance"
+        details: "Complex relational queries, indexing strategy, and database performance",
+        link: "https://www.hackerrank.com/certificates"
       },
       {
         id: "cert-rest",
         title: "Rest API (Intermediate)",
         issuer: "HackerRank",
         year: "2026",
-        details: "RESTful architecture, API management, and Python endpoints"
-      },
-      {
-        id: "cert-swe",
-        title: "Software Engineer Intern",
-        issuer: "HackerRank",
-        year: "2026",
-        details: "Algorithmic problem solving, Python, and SQL optimization"
-      },
-      {
-        id: "cert-scrum",
-        title: "Essential Scrum",
-        issuer: "Scrum Alliance / Certiprof",
-        year: "2026",
-        details: "Agile methodologies, sprint cadences, and team deliverables"
-      },
-      {
-        id: "cert-ibm-design",
-        title: "Enterprise Design Thinking Practitioner",
-        issuer: "IBM",
-        year: "2026",
-        details: "User-centered design principles, stakeholder alignment, problem solving"
-      },
-      {
-        id: "cert-ibm-cyber",
-        title: "Cybersecurity Fundamentals",
-        issuer: "IBM",
-        year: "2026",
-        details: "Cyber risk management, threat analysis, security strategies"
+        details: "RESTful architecture, API management, and service endpoints",
+        link: "https://www.hackerrank.com/certificates"
       }
     ],
     languages: [
@@ -397,8 +358,8 @@ export const cvDataMap: Record<Language, CVData> = {
       },
       {
         language: "English",
-        level: "C1 Advanced",
-        certification: "EF SET Certificate (Score: 63/100 · Listening: C2)"
+        level: "C1 Advanced / Full Professional Proficiency",
+        certification: "EF SET Score: 63/100 · cert.efset.org/3GPEHs"
       }
     ],
     ui: {
@@ -409,7 +370,7 @@ export const cvDataMap: Record<Language, CVData> = {
         skills: "SKILLS",
         education: "EDUCATION",
         contact: "CONTACT",
-        searchPlaceholder: "Search skill or role...",
+        searchPlaceholder: "Search skill, project or role...",
         contactBtn: "CONTACT"
       },
       hero: {
@@ -422,9 +383,9 @@ export const cvDataMap: Record<Language, CVData> = {
         sectionTitle: "ABOUT & PHILOSOPHY",
         sectionSubtitle: "PROFESSIONAL PROFILE · TECHNICAL VISION",
         performanceTitle: "PERFORMANCE-DRIVEN",
-        performanceDesc: "Relentless focus on database latency, ORM query patterns (N+1 resolution), and critical request lifecycles.",
+        performanceDesc: "Relentless focus on database latency, ORM query patterns (N+1 resolution), unindexed query elimination, and critical request lifecycles.",
         robustnessTitle: "ROBUSTNESS & SCALE",
-        robustnessDesc: "Production-grade resilience, Gunicorn concurrency diagnosis, and strict testing with Selenium.",
+        robustnessDesc: "Production-grade resilience, Gunicorn concurrency diagnosis, timeout cascade prevention, and strict asynchronous processing.",
         specTitle: "TECHNICAL SPECS",
         locationLabel: "LOCATION:",
         statusLabel: "STATUS:",
@@ -443,7 +404,7 @@ export const cvDataMap: Record<Language, CVData> = {
       },
       projects: {
         sectionNum: "03",
-        sectionTitle: "SELECTED PROJECTS",
+        sectionTitle: "SELECTED PROJECTS & HACKATHONS",
         sectionSubtitle: "ENGINEERING CATALOGUE",
         deliveriesCount: "REGISTERED PROJECTS",
         allFilter: "ALL",
@@ -455,7 +416,7 @@ export const cvDataMap: Record<Language, CVData> = {
       },
       skills: {
         sectionNum: "04",
-        sectionTitle: "COMPETENCIES & TECHNICAL STACK",
+        sectionTitle: "TECHNICAL SKILLS & CERTIFICATIONS",
         sectionSubtitle: "FRAMEWORKS · DATABASE PERFORMANCE · INFRASTRUCTURE",
         tag: "MODERN ECOSYSTEM",
         footerTag: "PRODUCTION PROFICIENCY"
@@ -481,6 +442,7 @@ export const cvDataMap: Record<Language, CVData> = {
         emailLabel: "PRIMARY EMAIL",
         linkedinLabel: "PROFESSIONAL NETWORK",
         githubLabel: "CODE REPOSITORIES (GITHUB)",
+        gitlabLabel: "REPOSITORIES & CI/CD (GITLAB)",
         timezone: "TIME ZONE: GMT-3 (BUENOS AIRES) · ESTIMATED RESPONSE: < 24H",
         nameLabel: "YOUR NAME *",
         namePlaceholder: "e.g. John Doe",
@@ -502,6 +464,7 @@ export const cvDataMap: Record<Language, CVData> = {
         manifestoDesc: "Minimalist editorial system showcasing professional trajectory and production-grade software.",
         downloadPdf: "Download Resume as PDF",
         githubRepos: "Repositories on GitHub",
+        gitlabRepos: "Projects on GitLab",
         projectMetrics: "Project Metrics",
         backToTop: "BACK TO TOP",
         rights: "ALL RIGHTS RESERVED.",
@@ -514,205 +477,163 @@ export const cvDataMap: Record<Language, CVData> = {
     personalInfo: {
       fullName: "JOAQUIN DIAZ SYROTINK",
       monogram: "JDS",
-      headline: "FULL STACK DEVELOPER · PYTHON · DJANGO · FASTAPI · AI-POWERED SYSTEMS",
+      headline: "DESARROLLADOR DE SOFTWARE · PYTHON · DJANGO · FASTAPI · BACKEND & PERFORMANCE",
       campaignStatement: [
         "ALTO RENDIMIENTO EN PRODUCCIÓN.",
-        "DISEÑO DE SISTEMAS",
-        "Y AUDITORÍA END-TO-END."
+        "ARQUITECTURA BACKEND",
+        "& OPTIMIZACIÓN DE SISTEMAS."
       ],
       location: "Buenos Aires, Argentina",
-      availability: "DISPONIBLE PARA NUEVAS OPORTUNIDADES PROFESIONALES",
+      availability: "DISPONIBLE PARA OPORTUNIDADES LABORALES Y PROYECTOS DE ALTO IMPACTO",
       email: "joaquindiazsyrotink@gmail.com",
       linkedin: "https://linkedin.com/in/joaquin-diaz-syrotink",
       github: "https://github.com/joaco844",
-      currentStack: ["Python", "Django", "FastAPI", "SQL", "MariaDB", "JavaScript", "Linux"],
+      gitlab: "https://gitlab.com/joaco_diaz",
+      currentStack: ["Python", "Django", "FastAPI", "SQL", "Gunicorn", "Celery", "PostgreSQL", "Docker", "Linux"],
       about: [
-        "Full Stack Developer especializado en Python, Django y FastAPI, con probada experiencia construyendo y optimizando sistemas de grado de producción para múltiples clientes simultáneos en el sector Legal Tech.",
-        "Sólido historial diagnosticando y resolviendo problemas de rendimiento de punta a punta: desde optimización de consultas SQL y resolución de patrones N+1, hasta auditorías integrales de plataforma que abarcan consumo de ORM, tareas en segundo plano, concurrencia en Gunicorn e integraciones con servicios externos.",
-        "Capacidad comprobada para trabajar con autonomía bajo presión, articulando requisitos entre partes interesadas técnicas y de negocio, y colaborando activamente en equipos dinámicos orientados a entregables de alto impacto."
+        "Desarrollador de Software especializado en Python, Django, FastAPI y arquitecturas backend de alto rendimiento. Experiencia directa diagnosticando y resolviendo cuellos de botella en producción para plataformas multi-tenant (optimización de ORM, resolución de consultas N+1, lookups redundantes y mitigación de bloqueos en Gunicorn).",
+        "Sólida capacidad para diseñar esquemas relacionales escalables, capas de servicios transaccionales y flujos de tareas asíncronas con Celery, combinando rigor de ingeniería con entregables estratégicos de negocio.",
+        "Experiencia colaborando con líderes técnicos y equipos multidisciplinarios, gestionando incidentes críticos en producción bajo presión y entregando código limpio, testeado y mantenible."
       ]
     },
     metrics: [
       { value: "-40%", label: "TIEMPOS DE RESPUESTA EN DJANGO (OPTIMIZACIÓN N+1)" },
-      { value: "3 FIRMAS", label: "CLIENTES CONCURRENTES EN PLATAFORMA LEGAL TECH" },
-      { value: "+1,100", label: "NIÑOS BENEFICIADOS (CODE FOR GOOD JPMORGAN)" },
-      { value: "C1 ADV.", label: "NIVEL DE INGLÉS CERTIFICADO (EF SET · C2 LISTENING)" },
+      { value: "+1.100", label: "NIÑOS EN RIESGO BENEFICIADOS (JPMORGAN CHASE)" },
+      { value: "6 APIS", label: "APIS DE NASA INTEGRADAS & SIMULACIÓN 3D EN THREE.JS" },
+      { value: "C1 ADV.", label: "NIVEL DE INGLÉS CERTIFICADO (EF SET 63/100)" },
     ],
     experiences: [
       {
         id: "exp-mybig",
-        role: "Full Stack Developer",
+        role: "Desarrollador de Software Full Stack",
         company: "MyBiG",
         period: "JULIO 2024 — PRESENTE",
         location: "Buenos Aires, Argentina",
-        summary: "Desarrollo y optimización de arquitectura de plataforma SaaS en Legal Tech compartida por tres firmas de abogados clientes concurrentes.",
+        summary: "Ingeniería y optimización de arquitectura backend, ORM y servicios para plataforma Legal Tech multi-tenant.",
         achievements: [
-          "Relevamiento y traducción de requerimientos de tres firmas de abogados clientes hacia una plataforma compartida de Legal Tech, equilibrando flujos de trabajo específicos con una arquitectura y base de código común.",
-          "Diagnóstico y resolución de patrones de consulta N+1 y búsquedas redundantes en vistas centrales de Django, reduciendo tiempos de respuesta en un 40% y aliviando la carga en endpoints de alto tráfico.",
-          "Autoría de una auditoría integral de rendimiento en Django abarcando vistas, ORM, background jobs y observabilidad, entregando un plan de remediación priorizado por impacto.",
-          "Colaboración con el equipo y clientes en el diseño funcional e implementación de 'Procuraduría Digital' (módulo de presentación de escritos), definiendo reglas de negocio, flujos de UI y validaciones.",
-          "Diseño del modelo de datos y capa de servicios para métricas de uso de la plataforma, brindando visibilidad por categoría para toma de decisiones de facturación y capacidad.",
-          "Diseño e implementación de un sistema de gestión de tareas sincronizado entre módulos internos, garantizando a los abogados visibilidad de estado en tiempo real sin importar el módulo donde operen.",
-          "Diagnóstico de incidentes de bloqueo de workers en producción Gunicorn/Django causados por cascadas de timeout en llamadas a APIs externas sin política de reintentos, proponiendo soluciones preventivas."
+          "Diagnostiqué y resolví patrones de consulta N+1, lookups redundantes y consultas desindexadas en vistas centrales de Django/ORM, reduciendo tiempos de respuesta en un 40 % y aliviando la carga de la base de datos en picos de tráfico.",
+          "Investigue y solucioné incidentes críticos de bloqueo de workers en entornos productivos de Gunicorn/Django producidos por cascadas de timeouts en APIs externas; diseñé lógica de reintentos, timeouts estrictos y tareas asíncronas.",
+          "Lideré el desarrollo técnico de Procuraduría Digital (módulo automatizado de presentación de escritos), aplicando patrones de diseño OOP para asegurar validaciones estrictas y consistencia transaccional entre estudios jurídicos clientes.",
+          "Diseñé esquemas relacionales escalables y capas de servicio para métricas de uso de plataforma y sincronización de tareas entre módulos, habilitando visibilidad de consumo para decisiones de facturación e infraestructura.",
+          "Elaboré una auditoría integral de rendimiento de la plataforma Django (ORM, observabilidad y background jobs), entregando a los líderes técnicos un plan priorizado de remediación de deuda técnica."
         ],
-        technologies: ["Python", "Django", "MariaDB", "SQL", "JavaScript", "jQuery", "Bootstrap", "Linux", "Gunicorn"]
+        technologies: ["Python", "Django", "Gunicorn", "Celery", "MariaDB", "SQL", "APIs RESTful", "Procesamiento Asíncrono"]
       },
       {
         id: "exp-unsam",
-        role: "IT Support Intern",
-        company: "UNSAM (Universidad Nacional de San Martín)",
+        role: "Pasante de Soporte IT",
+        company: "Universidad Nacional de San Martín (UNSAM)",
         period: "AGOSTO 2023 — NOVIEMBRE 2023",
         location: "Buenos Aires, Argentina",
-        summary: "Soporte técnico integral para equipamiento e infraestructura informática del personal docente y académico.",
+        summary: "Mantenimiento preventivo, soporte a usuarios e infraestructura tecnológica para el personal docente y académico.",
         achievements: [
-          "Configuración, diagnóstico y reparación de estaciones de trabajo y periféricos para el equipo académico.",
-          "Atención y resolución directa de incidencias de hardware, software y conectividad en entornos multiusuario.",
-          "Organización, mantenimiento y control del inventario técnico informático."
+          "Mantenimiento preventivo, diagnóstico y resolución de incidentes de hardware, software y conectividad de red para más de 100 usuarios del personal académico, optimizando el control del inventario técnico."
         ],
-        technologies: ["Hardware", "Sistemas Operativos", "Redes / Networking", "Troubleshooting", "Inventario"]
+        technologies: ["Hardware", "Software", "Redes / Networking", "Troubleshooting", "Control de Inventario"]
       }
     ],
     projects: [
       {
+        id: "proj-jpmorgan-codeforgood",
+        title: "CODE FOR GOOD 2026 (JPMORGAN CHASE) — PLATAFORMA DE DONACIONES",
+        category: "HACKATHON / JPMORGAN CHASE",
+        subtitle: "Django, Chart.js, SQLite · Ago 2026",
+        image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb7?auto=format&fit=crop&w=900&q=80",
+        promoBadge: "CODE FOR GOOD 2026",
+        description: "Diseñé e implementé de punta a punta una plataforma para Patronato de la Infancia (ONG que asiste a más de 1.100 niños en riesgo), con autenticación de donantes, panel analítico en tiempo real con Chart.js y catálogo de 10 iniciativas sociales. Implementé el flujo seguro de donaciones con validación de tarjetas en cliente mediante el algoritmo de Luhn, garantizando el no almacenamiento de credenciales financieras sensibles.",
+        metrics: "+1.100 Niños Beneficiados · Validación con Algoritmo de Luhn",
+        technologies: ["Django", "Python", "Chart.js", "SQLite", "Algoritmo de Luhn", "HTML5/CSS3"],
+        demoUrl: "https://github.com/joaco844",
+        repoUrl: "https://github.com/joaco844",
+        featured: true
+      },
+      {
         id: "proj-space-dashboard",
-        title: "SPACE DASHBOARD — NASA OPEN APIS",
+        title: "SPACE DASHBOARD — EXPLORADOR DE APIS DE NASA",
         category: "FULL STACK & 3D SIMULATION",
-        subtitle: "Plataforma interactiva de exploración espacial con datos de la NASA",
+        subtitle: "space-dashboard-yore.onrender.com · Mayo 2026 – Presente",
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80",
         promoBadge: "EN PRODUCCIÓN",
-        description: "Aplicación web que centraliza datos abiertos de NASA en 6 módulos interactivos: foto astronómica diaria, rastreador de asteroides cercanos, galería de Mars Rover, visualización climática (CO₂ y mapas satelitales) y rastreador en vivo de la ISS con predicción de pasos. Integra simulación 3D del Sistema Solar con órbitas keplerianas y datos de cometas en vivo de JPL.",
-        metrics: "6 Módulos · Simulación 3D Three.js · En vivo",
-        technologies: ["Python", "Django", "JavaScript", "Three.js", "REST APIs", "Leaflet.js", "Chart.js", "Render"],
+        description: "Aplicación web full-stack que consume 6 APIs abiertas de la NASA (APOD, asteroides cercanos, rover de Marte, clima y rastreador de la ISS), integrando una simulación 3D interactiva del Sistema Solar con órbitas keplerianas en Three.js.",
+        metrics: "6 APIs Abiertas de NASA · Simulación 3D Three.js · Docker",
+        technologies: ["Python", "Django", "JavaScript", "Three.js", "REST APIs", "Leaflet.js", "Chart.js", "Docker", "Render"],
         demoUrl: "https://space-dashboard-yore.onrender.com",
         repoUrl: "https://github.com/joaco844",
         featured: true
       },
       {
         id: "proj-gitlab-ai",
-        title: "GITLAB RELEASE SUMMARY — AI AUTOMATION",
-        category: "AI-POWERED SYSTEMS & FASTAPI",
-        subtitle: "Automatización de notas de versión con LLMs y GitLab API",
+        title: "GITLAB RELEASE SUMMARY — AUTOMATIZACIÓN DE NOTAS CON IA",
+        category: "AI & MICROSERVICES",
+        subtitle: "FastAPI, python-gitlab, LLMs · Mar 2026 – Presente",
         image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=900&q=80",
-        promoBadge: "AI POWERED",
-        description: "Herramienta que se conecta a repositorios de GitLab y genera notas de lanzamiento estructuradas analizando el historial de commits mediante Modelos de Lenguaje (LLMs). Permite crear issues de GitLab con el resumen generado con un solo clic, acelerando el flujo de documentación.",
-        metrics: "1-Click GitLab Issue · Integración LLM Nativa",
-        technologies: ["FastAPI", "Python", "python-gitlab", "LLMs", "GitLab API"],
+        promoBadge: "INTEGRACIÓN IA",
+        description: "Microservicio que se conecta vía API a repositorios de GitLab, procesa el historial de commits y genera automáticamente notas de versión estructuradas utilizando LLMs, agilizando la documentación con creación de issues en 1 clic.",
+        metrics: "Microservicio FastAPI · Resúmenes LLM · Issues en 1 Clic",
+        technologies: ["FastAPI", "Python", "python-gitlab", "LLMs", "GitLab API", "APIs RESTful"],
         demoUrl: "https://github.com/joaco844",
         repoUrl: "https://github.com/joaco844",
         featured: true
-      },
-      {
-        id: "proj-jpmorgan-codeforgood",
-        title: "DONATION PLATFORM — PATRONATO DE LA INFANCIA",
-        category: "HACKATHON / JPMORGAN CHASE",
-        subtitle: "Plataforma para ONG beneficiando a +1,100 niños vulnerables",
-        image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb7?auto=format&fit=crop&w=900&q=80",
-        promoBadge: "CODE FOR GOOD 2026",
-        description: "Desarrollo integral de plataforma web (solo full stack ownership en el equipo) combinando portal institucional público con área autenticada de donantes. Modelo de datos relacional (Usuario, Proyecto, Categoría, Donación, Frecuencia), dashboard con Chart.js y pasarela segura con validación de tarjetas por algoritmo de Luhn sin persistir datos sensibles.",
-        metrics: "+1,100 Niños Beneficiados · Algoritmo de Luhn",
-        technologies: ["Python", "Django", "SQLite", "JavaScript", "Chart.js", "HTML/CSS"],
-        demoUrl: "https://github.com/joaco844",
-        repoUrl: "https://github.com/joaco844",
-        featured: true
-      },
-      {
-        id: "proj-testing-automation",
-        title: "TESTING LIFECYCLE AUTOMATION",
-        category: "QA & TEST AUTOMATION",
-        subtitle: "Framework de automatización de pruebas de regresión en UADE",
-        image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=900&q=80",
-        promoBadge: "QA AUTOMATION",
-        description: "Scripts automatizados desarrollados con Selenium para optimizar pruebas de regresión, aumentando la velocidad de iteración y asegurando cobertura exhaustiva de casos de uso y estabilidad de plataforma, con registro estructurado de evidencias de defectos.",
-        metrics: "Mayor Velocidad de Iteración · Cobertura Total",
-        technologies: ["Python", "Selenium", "Regression Testing", "Defect Tracking"],
-        demoUrl: "https://github.com/joaco844",
-        repoUrl: "https://github.com/joaco844"
       }
     ],
     skillCategories: [
       {
-        title: "BACKEND & FRAMEWORKS",
-        skills: ["Python", "Django", "FastAPI", "Gunicorn", "REST APIs", "Arquitectura de Servicios"]
+        title: "LENGUAJES",
+        skills: ["Python (Avanzado)", "SQL (Intermedio)", "Java (Fundamentos OOP)", "JavaScript (ES6+)", "HTML5/CSS3"]
       },
       {
-        title: "BASES DE DATOS & PERFORMANCE",
-        skills: ["MariaDB", "MySQL", "Optimización SQL", "Estrategias de Indexación", "Resolución de N+1", "Profiling (pyinstrument)", "Django Debug Toolbar"]
+        title: "BACKEND Y ARQUITECTURA",
+        skills: ["Django", "FastAPI", "APIs RESTful", "Gunicorn", "Celery", "Optimización de ORM (N+1)", "Procesamiento Asíncrono"]
       },
       {
-        title: "FRONTEND & VISUALIZACIÓN",
-        skills: ["JavaScript", "jQuery", "HTML5 / CSS3", "Bootstrap", "Three.js", "Chart.js", "Leaflet.js"]
+        title: "BASES DE DATOS Y DEVOPS",
+        skills: ["MariaDB", "MySQL", "PostgreSQL", "Docker", "Git", "GitLab CI/CD", "Linux (Ubuntu/Debian)", "Postman"]
       },
       {
-        title: "HERRAMIENTAS, CLOUD & QA",
-        skills: ["Git", "GitHub", "Linux", "Docker", "Selenium", "Postman", "Render", "AI Tooling (Claude Code, ChatGPT)"]
+        title: "DIAGNÓSTICO Y RENDIMIENTO",
+        skills: ["Resolución de Consultas N+1", "Mitigación de Bloqueos de Workers", "Profiling en Producción (pyinstrument)", "Políticas de Timeouts Estrictos", "Consistencia Transaccional (OOP)"]
       }
     ],
     education: [
       {
         id: "edu-uade",
-        degree: "Licenciatura en Gestión de Tecnología de la Información (B.Sc. IT Management)",
-        institution: "UADE — Universidad Argentina de la Empresa (Buenos Aires)",
+        degree: "Licenciatura en Gestión de Tecnología de la Información",
+        institution: "Universidad Argentina de la Empresa (UADE) · Buenos Aires, Argentina",
         period: "2025 — PRESENTE",
-        description: "Formación de grado en gestión estratégica de tecnología, arquitectura de software empresarial, modelado de datos y liderazgo de proyectos tecnológicos."
+        description: "Carrera de grado enfocada en gestión estratégica de tecnología, arquitectura de software empresarial, modelado de datos y dirección de proyectos IT."
       },
       {
         id: "edu-politecnico",
-        degree: "Técnico en Computación (Computer Technician)",
-        institution: "Instituto Politécnico Modelo (Buenos Aires)",
+        degree: "Técnico en Computación",
+        institution: "Instituto Politécnico Modelo · Buenos Aires, Argentina",
         period: "2018 — 2023",
-        description: "Formación técnica de 6 años especializada en arquitectura de computadoras, redes, fundamentos algorítmicos y desarrollo de software."
+        description: "Título técnico secundario de 6 años con sólida formación en lógica de programación, bases de datos relacionales, redes, arquitectura de hardware y sistemas."
       }
     ],
     certifications: [
       {
         id: "cert-efset",
         title: "EF SET English Certificate — C1 Advanced",
-        issuer: "EF Education First",
+        issuer: "EF Standard English Test",
         year: "2026",
-        details: "Puntuación: 63/100 (Lectura C1 · Escucha C2)",
+        details: "Puntaje: 63/100 · Capacidad Profesional Completa (cert.efset.org/3GPEHs)",
         link: "https://cert.efset.org/3GPEHs"
       },
       {
         id: "cert-sql",
-        title: "SQL (Intermediate)",
+        title: "SQL (Intermedio)",
         issuer: "HackerRank",
         year: "2026",
-        details: "Consultas complejas, optimización relacional y diseño en MySQL"
+        details: "Consultas complejas, optimización relacional y rendimiento en base de datos",
+        link: "https://www.hackerrank.com/certificates"
       },
       {
         id: "cert-rest",
-        title: "Rest API (Intermediate)",
+        title: "Rest API (Intermedio)",
         issuer: "HackerRank",
         year: "2026",
-        details: "Diseño y consumo de APIs RESTful en Python"
-      },
-      {
-        id: "cert-swe",
-        title: "Software Engineer Intern",
-        issuer: "HackerRank",
-        year: "2026",
-        details: "Resolución de problemas algorítmicos, Python y SQL"
-      },
-      {
-        id: "cert-scrum",
-        title: "Essential Scrum",
-        issuer: "Scrum Alliance / Certiprof",
-        year: "2026",
-        details: "Metodologías ágiles y gestión iterativa de proyectos de software"
-      },
-      {
-        id: "cert-ibm-design",
-        title: "Enterprise Design Thinking Practitioner",
-        issuer: "IBM",
-        year: "2026",
-        details: "Metodología de diseño centrado en el usuario y alineación de equipos"
-      },
-      {
-        id: "cert-ibm-cyber",
-        title: "Cybersecurity Fundamentals",
-        issuer: "IBM",
-        year: "2026",
-        details: "Gestión de riesgos, análisis de amenazas y estrategias de seguridad"
+        details: "Arquitectura RESTful, gestión de endpoints y procesamiento de datos",
+        link: "https://www.hackerrank.com/certificates"
       }
     ],
     languages: [
@@ -722,8 +643,8 @@ export const cvDataMap: Record<Language, CVData> = {
       },
       {
         language: "Inglés",
-        level: "C1 Advanced",
-        certification: "EF SET Certificate (Puntaje: 63/100 · Escucha: C2)"
+        level: "C1 Avanzado / Capacidad Profesional Completa",
+        certification: "EF SET Puntaje: 63/100 · cert.efset.org/3GPEHs"
       }
     ],
     ui: {
@@ -734,63 +655,63 @@ export const cvDataMap: Record<Language, CVData> = {
         skills: "HABILIDADES",
         education: "EDUCACIÓN",
         contact: "CONTACTO",
-        searchPlaceholder: "Buscar habilidad o rol...",
+        searchPlaceholder: "Buscar habilidad, proyecto o rol...",
         contactBtn: "CONTACTAR"
       },
       hero: {
-        tag: "CURRÍCULUM VITAE & PORTFOLIO 2026",
+        tag: "CURRICULUM VITAE & PORTAFOLIO 2026",
         exploreBtn: "EXPLORAR PROYECTOS",
-        downloadPdfBtn: "DESCARGAR RESUMEN (PDF)"
+        downloadPdfBtn: "DESCARGAR CV (PDF)"
       },
       about: {
         sectionNum: "01",
         sectionTitle: "SOBRE MÍ & FILOSOFÍA",
         sectionSubtitle: "PERFIL PROFESIONAL · VISIÓN TÉCNICA",
-        performanceTitle: "ENFOQUE EN PERFORMANCE",
-        performanceDesc: "Optimización profunda de consultas a base de datos, resolución de patrones N+1 y ciclo de vida de peticiones críticas.",
-        robustnessTitle: "ROBUSTEZ & ESCALA",
-        robustnessDesc: "Resiliencia en producción, diagnóstico de concurrencia en Gunicorn y testing exhaustivo con Selenium.",
-        specTitle: "FICHA TÉCNICA",
+        performanceTitle: "ORIENTADO AL RENDIMIENTO",
+        performanceDesc: "Enfoque constante en latencia de base de datos, patrones de consulta ORM (resolución N+1), consultas desindexadas y ciclo de vida de peticiones.",
+        robustnessTitle: "ROBUSTEZ Y ESCALA",
+        robustnessDesc: "Resiliencia en producción, diagnóstico de concurrencia en Gunicorn, prevención de cascadas de timeouts y procesamiento asíncrono estricto.",
+        specTitle: "ESPECIFICACIONES TÉCNICAS",
         locationLabel: "UBICACIÓN:",
-        statusLabel: "STATUS:",
+        statusLabel: "ESTADO:",
         statusValue: "DISPONIBLE",
         modalityLabel: "MODALIDAD:",
         modalityValue: "REMOTO / HÍBRIDO",
-        stackLabel: "CORE STACK:"
+        stackLabel: "STACK CENTRAL:"
       },
       experience: {
         sectionNum: "02",
-        sectionTitle: "TRAYECTORIA & EXPERIENCIA",
-        sectionSubtitle: "ROLES · RESPONSABILIDADES · IMPACTO CUANTIFICADO",
-        achievementsTitle: "LOGROS PRINCIPALES & ENTREGAS",
+        sectionTitle: "EXPERIENCIA LABORAL",
+        sectionSubtitle: "ROLES · RESPONSABILIDADES · IMPACTO MEDIBLE",
+        achievementsTitle: "LOGROS CLAVE & ENTREGABLES",
         techTitle: "TECNOLOGÍAS APLICADAS",
-        achievementsCountSuffix: "LOGROS"
+        achievementsCountSuffix: "ENTREGABLES"
       },
       projects: {
         sectionNum: "03",
-        sectionTitle: "PROYECTOS SELECCIONADOS",
+        sectionTitle: "PROYECTOS DESTACADOS & HACKATHONS",
         sectionSubtitle: "CATÁLOGO DE INGENIERÍA",
-        deliveriesCount: "ENTREGAS REGISTRADAS",
+        deliveriesCount: "PROYECTOS REGISTRADOS",
         allFilter: "TODOS",
-        demoBtn: "DEMO EN VIVO",
+        demoBtn: "VER EN VIVO",
         repoBtn: "CÓDIGO",
-        noResults: "No se encontraron proyectos con el criterio de búsqueda",
+        noResults: "No se encontraron proyectos con ese criterio",
         viewAllBtn: "VER TODOS LOS PROYECTOS",
-        techsCountSuffix: "TECHS"
+        techsCountSuffix: "TECNOLOGÍAS"
       },
       skills: {
         sectionNum: "04",
-        sectionTitle: "COMPETENCIAS & STACK TÉCNICO",
+        sectionTitle: "HABILIDADES TÉCNICAS & CERTIFICACIONES",
         sectionSubtitle: "FRAMEWORKS · RENDIMIENTO DE BASE DE DATOS · INFRAESTRUCTURA",
         tag: "ECOSISTEMA MODERNO",
-        footerTag: "DOMINIO PROFESIONAL"
+        footerTag: "COMPETENCIA EN PRODUCCIÓN"
       },
       education: {
         sectionNum: "05",
-        sectionTitle: "FORMACIÓN, CERTIFICACIONES & IDIOMAS",
-        sectionSubtitle: "ESTUDIOS UNIVERSITARIOS · CREDENCIALES VERIFICADAS · IDIOMAS",
-        verifiedTag: "HISTORIAL VERIFICADO",
-        academicTitle: "ESTUDIOS ACADÉMICOS",
+        sectionTitle: "EDUCACIÓN, CERTIFICACIONES E IDIOMAS",
+        sectionSubtitle: "TÍTULOS ACADÉMICOS · CREDENCIALES VERIFICADAS · IDIOMAS",
+        verifiedTag: "REGISTRO VERIFICADO",
+        academicTitle: "FORMACIÓN ACADÉMICA",
         languagesTitle: "IDIOMAS",
         certsTitle: "CERTIFICACIONES PROFESIONALES",
         credentialBtn: "CREDENCIAL"
@@ -806,6 +727,7 @@ export const cvDataMap: Record<Language, CVData> = {
         emailLabel: "EMAIL PRINCIPAL",
         linkedinLabel: "RED PROFESIONAL",
         githubLabel: "REPOSITORIOS & CÓDIGO (GITHUB)",
+        gitlabLabel: "REPOSITORIOS & CI/CD (GITLAB)",
         timezone: "ZONA HORARIA: GMT-3 (BUENOS AIRES) · RESPUESTA ESTIMADA: < 24HS",
         nameLabel: "TU NOMBRE *",
         namePlaceholder: "Ej: Martín Rodríguez",
@@ -817,7 +739,7 @@ export const cvDataMap: Record<Language, CVData> = {
         messagePlaceholder: "Describe tu propuesta, proyecto o requerimiento técnico...",
         submitBtn: "ENVIAR MENSAJE DIRECTO",
         privacyNote: "PRIVACIDAD GARANTIZADA · SIN SPAM",
-        successMsg: "MENSAJE PREPARED. REDIRIGIENDO AL CLIENTE DE CORREO..."
+        successMsg: "MENSAJE PREPARADO. REDIRIGIENDO AL CLIENTE DE CORREO..."
       },
       footer: {
         sectionsCol: "SECCIONES",
@@ -827,6 +749,7 @@ export const cvDataMap: Record<Language, CVData> = {
         manifestoDesc: "Sistema editorial minimalista para exhibición de trayectoria profesional y código de producción.",
         downloadPdf: "Descargar CV en PDF",
         githubRepos: "Repositorios en GitHub",
+        gitlabRepos: "Proyectos en GitLab",
         projectMetrics: "Métricas de Proyectos",
         backToTop: "VOLVER AL INICIO",
         rights: "TODOS LOS DERECHOS RESERVADOS.",

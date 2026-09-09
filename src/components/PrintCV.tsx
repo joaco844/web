@@ -6,12 +6,12 @@ interface PrintCVProps {
 }
 
 export const PrintCV: React.FC<PrintCVProps> = ({ lang }) => {
-  const { personalInfo, experiences, projects, education, certifications, languages } = cvDataMap[lang];
+  const { personalInfo, experiences, projects, education } = cvDataMap[lang];
 
   return (
     <div className="hidden print:block p-8 bg-white text-black font-sans max-w-4xl mx-auto leading-normal">
       {/* Header */}
-      <div className="border-b-2 border-black pb-3 mb-5">
+      <div className="border-b-2 border-black pb-3 mb-4">
         <h1 className="text-3xl font-bold tracking-tight uppercase text-black">
           {personalInfo.fullName}
         </h1>
@@ -25,29 +25,16 @@ export const PrintCV: React.FC<PrintCVProps> = ({ lang }) => {
           <span>|</span>
           <span>github.com/joaco844</span>
           <span>|</span>
-          <span>{personalInfo.location}</span>
+          <span>gitlab.com/joaco_diaz</span>
         </div>
       </div>
 
-      {/* Summary */}
-      <div className="mb-5">
-        <h2 className="text-xs font-bold uppercase tracking-widest border-b border-gray-400 pb-1 mb-2">
-          {lang === 'en' ? 'SUMMARY' : 'RESUMEN PROFESIONAL'}
+      {/* Experiencia Laboral */}
+      <div className="mb-4">
+        <h2 className="text-xs font-bold uppercase tracking-widest border-b border-gray-400 pb-1 mb-2.5">
+          {lang === 'en' ? 'WORK EXPERIENCE' : 'EXPERIENCIA LABORAL'}
         </h2>
-        <p className="text-xs leading-relaxed text-gray-800 mb-2">
-          {personalInfo.about.join(' ')}
-        </p>
-        <p className="text-xs text-gray-900 font-semibold">
-          <span className="font-bold">{lang === 'en' ? 'Current stack:' : 'Stack actual:'}</span> {personalInfo.currentStack.join(' · ')}
-        </p>
-      </div>
-
-      {/* Experience */}
-      <div className="mb-5">
-        <h2 className="text-xs font-bold uppercase tracking-widest border-b border-gray-400 pb-1 mb-3">
-          {lang === 'en' ? 'EXPERIENCE' : 'EXPERIENCIA LABORAL'}
-        </h2>
-        <div className="space-y-4">
+        <div className="space-y-3.5">
           {experiences.map((exp) => (
             <div key={exp.id}>
               <div className="flex justify-between items-baseline">
@@ -63,56 +50,38 @@ export const PrintCV: React.FC<PrintCVProps> = ({ lang }) => {
                   </li>
                 ))}
               </ul>
-              <div className="text-[11px] text-gray-700 mt-1">
-                <span className="font-semibold">{lang === 'en' ? 'Stack:' : 'Tecnologías:'}</span> {exp.technologies.join(' · ')}
-              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Projects */}
-      <div className="mb-5">
-        <h2 className="text-xs font-bold uppercase tracking-widest border-b border-gray-400 pb-1 mb-3">
-          {lang === 'en' ? 'PROJECTS & HACKATHONS' : 'PROYECTOS & HACKATHONS'}
+      {/* Proyectos Destacados y Hackathons */}
+      <div className="mb-4">
+        <h2 className="text-xs font-bold uppercase tracking-widest border-b border-gray-400 pb-1 mb-2.5">
+          {lang === 'en' ? 'SELECTED PROJECTS & HACKATHONS' : 'PROYECTOS DESTACADOS Y HACKATHONS'}
         </h2>
         <div className="space-y-3">
           {projects.map((proj) => (
             <div key={proj.id}>
               <div className="flex justify-between items-baseline">
-                <span className="text-xs font-bold uppercase text-black">
+                <span className="text-xs font-bold text-black">
                   {proj.title}
                 </span>
-                <span className="text-[11px] text-gray-600 font-medium">{proj.category}</span>
+                <span className="text-[11px] text-gray-600 font-medium">{proj.subtitle}</span>
               </div>
               <p className="text-xs text-gray-800 mt-0.5 leading-snug">
                 {proj.description}
               </p>
               <div className="text-[11px] text-gray-700 mt-0.5">
-                <span className="font-semibold">{lang === 'en' ? 'Stack:' : 'Tecnologías:'}</span> {proj.technologies.join(' · ')}
+                <span className="font-semibold">{lang === 'en' ? 'Stack:' : 'Stack:'}</span> {proj.technologies.join(', ')}
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Technical Skills */}
-      <div className="mb-5">
-        <h2 className="text-xs font-bold uppercase tracking-widest border-b border-gray-400 pb-1 mb-2">
-          {lang === 'en' ? 'TECHNICAL SKILLS' : 'HABILIDADES TÉCNICAS'}
-        </h2>
-        <div className="text-xs text-gray-800 space-y-1">
-          <p><span className="font-bold">Backend:</span> Python, Django, FastAPI</p>
-          <p><span className="font-bold">{lang === 'en' ? 'Databases:' : 'Bases de datos:'}</span> MariaDB, MySQL, SQL optimization, indexing strategy</p>
-          <p><span className="font-bold">{lang === 'en' ? 'Debugging & Performance:' : 'Diagnóstico y Rendimiento:'}</span> {lang === 'en' ? 'Production profiling (pyinstrument, django-debug-toolbar), platform-wide performance audits (ORM, memory, background jobs), root-cause analysis, query optimization' : 'Profiling en producción (pyinstrument, django-debug-toolbar), auditorías de rendimiento en plataforma (ORM, memoria, background jobs), análisis de causa raíz, optimización de queries'}</p>
-          <p><span className="font-bold">{lang === 'en' ? 'Tools:' : 'Herramientas:'}</span> Git, GitHub, Postman, Linux, Docker, Generative AI tools (Claude Code, ChatGPT)</p>
-          <p><span className="font-bold">{lang === 'en' ? 'Testing:' : 'Testing:'}</span> Selenium, functional testing</p>
-          <p><span className="font-bold">Frontend:</span> JavaScript, jQuery, HTML/CSS, Bootstrap, Three.js, Chart.js</p>
-        </div>
-      </div>
-
-      {/* Education */}
-      <div className="mb-5">
+      {/* Educación */}
+      <div className="mb-4">
         <h2 className="text-xs font-bold uppercase tracking-widest border-b border-gray-400 pb-1 mb-2">
           {lang === 'en' ? 'EDUCATION' : 'EDUCACIÓN'}
         </h2>
@@ -121,7 +90,7 @@ export const PrintCV: React.FC<PrintCVProps> = ({ lang }) => {
             <div key={edu.id} className="flex justify-between items-baseline">
               <div>
                 <span className="font-bold text-black">{edu.degree}</span>
-                <span className="text-gray-700"> · {edu.institution}</span>
+                <span className="text-gray-700"> — {edu.institution}</span>
               </div>
               <span className="text-gray-600 font-medium">{edu.period}</span>
             </div>
@@ -129,21 +98,42 @@ export const PrintCV: React.FC<PrintCVProps> = ({ lang }) => {
         </div>
       </div>
 
-      {/* Certifications & Languages */}
+      {/* Habilidades Técnicas y Certificaciones */}
       <div>
         <h2 className="text-xs font-bold uppercase tracking-widest border-b border-gray-400 pb-1 mb-2">
-          {lang === 'en' ? 'CERTIFICATIONS & LANGUAGES' : 'CERTIFICACIONES E IDIOMAS'}
+          {lang === 'en' ? 'TECHNICAL SKILLS & CERTIFICATIONS' : 'HABILIDADES TÉCNICAS Y CERTIFICACIONES'}
         </h2>
-        <ul className="list-disc list-outside ml-4 text-xs text-gray-800 space-y-1 mb-3">
-          {certifications.map((cert) => (
-            <li key={cert.id}>
-              <span className="font-semibold text-black">{cert.title}</span> — {cert.issuer} · {cert.year} ({cert.details})
-            </li>
-          ))}
-        </ul>
-
-        <div className="text-xs text-gray-900">
-          <span className="font-bold">{lang === 'en' ? 'Languages:' : 'Idiomas:'}</span> {languages.map(l => `${l.language} — ${l.level}${l.certification ? ` (${l.certification})` : ''}`).join(' | ')}
+        <div className="text-xs text-gray-800 space-y-1">
+          <p>
+            <span className="font-bold">{lang === 'en' ? 'Languages:' : 'Lenguajes:'}</span>{' '}
+            {lang === 'en'
+              ? 'Python (Advanced), SQL (Intermediate), Java (OOP Fundamentals), JavaScript (ES6+), HTML5/CSS3'
+              : 'Python (Avanzado), SQL (Intermedio), Java (Fundamentos OOP), JavaScript (ES6+), HTML5/CSS3'}
+          </p>
+          <p>
+            <span className="font-bold">{lang === 'en' ? 'Backend & Architecture:' : 'Backend y Arquitectura:'}</span>{' '}
+            {lang === 'en'
+              ? 'Django, FastAPI, RESTful APIs, Gunicorn, Celery, ORM Optimization (N+1), Asynchronous Processing'
+              : 'Django, FastAPI, APIs RESTful, Gunicorn, Celery, Optimización de ORM (N+1), Procesamiento Asíncrono'}
+          </p>
+          <p>
+            <span className="font-bold">{lang === 'en' ? 'Databases & DevOps:' : 'Bases de Datos y DevOps:'}</span>{' '}
+            {lang === 'en'
+              ? 'MariaDB, MySQL, PostgreSQL, Docker, Git, GitLab CI/CD, Linux (Ubuntu/Debian), Postman'
+              : 'MariaDB, MySQL, PostgreSQL, Docker, Git, GitLab CI/CD, Linux (Ubuntu/Debian), Postman'}
+          </p>
+          <p>
+            <span className="font-bold">{lang === 'en' ? 'Certifications:' : 'Certificaciones:'}</span>{' '}
+            {lang === 'en'
+              ? 'EF SET English C1 Advanced (Score: 63/100 · cert.efset.org/3GPEHs), HackerRank SQL and REST API (Intermediate)'
+              : 'EF SET English C1 Advanced (Puntaje: 63/100 · cert.efset.org/3GPEHs), HackerRank SQL y REST API (Intermedio)'}
+          </p>
+          <p>
+            <span className="font-bold">{lang === 'en' ? 'Languages:' : 'Idiomas:'}</span>{' '}
+            {lang === 'en'
+              ? 'Spanish (Native), English (C1 Advanced / Full Professional Proficiency)'
+              : 'Español (Nativo), Inglés (C1 Avanzado / Capacidad Profesional Completa)'}
+          </p>
         </div>
       </div>
     </div>
